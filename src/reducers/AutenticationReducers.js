@@ -10,8 +10,8 @@ import { CHANGE_EMAIL,
 
 const INITIAL_STATE = {
     name: '',
-    email: 'usertest3@email.com',
-    password: 'Senha#123456',
+    email: '',
+    password: '',
     errorRegister: '',
     loginErro: '',
     loading: false,
