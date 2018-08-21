@@ -46,7 +46,7 @@ export const registerUser = (data) => {
         if(validatePassword(data.password)) {
             axios.post('https://dev.people.com.ai/mobile/api/v2/register',
             requestData, header )
-            .then(response => dispatch({ type: REGISTER_SUCESS }))
+            .then(response => registerSucess(dispatch))
             .catch(error => dispatch({ type: REGISTER_ERROR }))
         }
         else {
@@ -77,6 +77,11 @@ export const validateUser = (data) => {
             })
             .catch(error =>  loginError(dispatch))
         }
+}
+
+const registerSucess= dispatch => {
+    dispatch({ type: REGISTER_SUCESS })
+    Actions.welcome()
 }
 
 const loginSucess = (user, response, dispatch) => {

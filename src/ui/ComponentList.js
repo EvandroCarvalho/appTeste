@@ -42,14 +42,15 @@ _closeModal() {
         onPress = { () => this.setState({visible: true}) }
         >
             <View style= {{flex: 1, flexDirection: 'row', borderBottomWidth: 1, padding: 5, backgroundColor: '#FFF'}}>
-            <Image source={{
+            <Image  style={{width: 40, height: 40, marginRight: 10, resizeMode: Image.resizeMode.contain}}
+                    source={{
                     uri: `https://dev.people.com.ai/mobile/api/v2/logo/${this.props.link}`,
                     method: 'GET',
                     headers: {
                     authorization: this.props.token
                     },
                 }}
-                style={{width: 40, height: 40, marginRight: 10}} />
+                />
                 <View style={{justifyContent: 'center'}} >
                     <Text style = {styles.styleText} link = { this.props.link } >{this.props.link}</Text>
                 </View>
