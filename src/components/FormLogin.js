@@ -62,6 +62,7 @@ class FormLogin extends Component {
                         <Text style = {styles.textLink} >Ainda não tem cadastro? Cadastre-se!</Text>
                     </TouchableHighlight>
                 </View>
+                
                 <View style = {styles.viewButton}>
                     <Text style={{color: 'red', fontSize:18, marginBottom: 10, textAlign: 'center'}}>
                         {this.props.loginErro}
@@ -75,10 +76,10 @@ class FormLogin extends Component {
 
 const mapStateToProsp = state => (
     {
-        loading: state.AppReducers.loading,
-        password: state.AppReducers.password,
-        email: state.AppReducers.email,
-        loginErro: state.AppReducers.loginErro
+        loading: state.AutenticationReducers.loading,
+        password: state.AutenticationReducers.password,
+        email: state.AutenticationReducers.email,
+        loginErro: state.AutenticationReducers.loginErro
     }
 )
 

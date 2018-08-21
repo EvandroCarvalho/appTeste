@@ -4,14 +4,17 @@ import { Router, Scene } from 'react-native-router-flux';
 
 import FormLogin from './components/FormLogin';
 import FormRegister from './components/FormRegister';
-import Main from './components/Main';
+import LinkList from './components/LinkList';
 import Welcome from './components/Welcome';
+import AddLink from './components/AddLink'
 
+const imageBack = require('./ui/imgs/back.png')
 
 export default Routes = () => (
     <Router 
         navigationBarStyle={{backgroundColor: "#002939"}}
         titleStyle={{color: '#fff'}}
+        
     >
         <Scene key ='root'>
             <Scene 
@@ -28,14 +31,15 @@ export default Routes = () => (
                 component={FormRegister} 
                 titleStyle={{ color: '#FFF'}} 
                 title='Cadastro'
+                backButtonImage = {imageBack}
             />
             <Scene 
-                key='main'
+                key='linkList'
                 back= {true}
-              //  initial = {true}
-                component={Main} 
+                component={LinkList} 
                 titleStyle={{ color: '#FFF'}} 
-                title='principal'
+                title='Lista de sites'
+                backButtonImage = {imageBack}
             />
             <Scene 
                 key='welcome'
@@ -44,6 +48,14 @@ export default Routes = () => (
                 titleStyle={{ color: '#FFF'}} 
                 title='Bem Vindo'
                 hideNavBar
+            />
+            <Scene 
+                key='addLink'
+                back= {true}
+                component={AddLink} 
+                titleStyle={{ color: '#FFF'}} 
+                title='Adicionar site' 
+                backButtonImage = {imageBack}
             />
         </Scene>
     </Router>

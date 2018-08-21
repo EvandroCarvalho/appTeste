@@ -1,7 +1,5 @@
 import axios from 'axios';
-import { AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import store from 'react-native-simple-store';
 
 import { CHANGE_EMAIL,
     CHANGE_NAME,
@@ -10,7 +8,8 @@ import { CHANGE_EMAIL,
     REGISTER_ERROR,
     LOGIN_SUCESS,
     LOGIN_ERROR,
-    LOADING } from './types';
+    LOADING,
+    } from './types';
 
 export const changeEmail = (email) => {
     return {
@@ -74,19 +73,16 @@ export const validateUser = (data) => {
                    token: response.data.token,
                    links: []
                 }
-               // console.log(user)
-               saveStorage(user)
                 loginSucess(user, response.data, dispatch)
             })
             .catch(error =>  loginError(dispatch))
         }
 }
 
-
 const loginSucess = (user, response, dispatch) => {
     dispatch({type: CHANGE_EMAIL, payload: user.email})
     dispatch({type: LOGIN_SUCESS, payload: response.token})
-    Actions.main();
+    Actions.linkList();
 }
 
 const loginError = (dispatch) => {
@@ -115,13 +111,5 @@ const contensChar = password => {
     return password.match("[A-Z]") ? true : false
 }
 
-const saveStorage = (user) => {
-
-    AsyncStorage.setItem('user1', user);
-
-
-    store.push('usuario', user)
-    .catch(err => logError(err))
-}
 
 

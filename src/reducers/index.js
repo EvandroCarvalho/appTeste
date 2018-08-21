@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import AppReducers from './AppReducers'
+import AutenticationReducers from './AutenticationReducers'
+import MenuListReducers from './MenuListReducers'
 
 export default combineReducers({
-    AppReducers,
+    AutenticationReducers,
+    MenuListReducers
 })

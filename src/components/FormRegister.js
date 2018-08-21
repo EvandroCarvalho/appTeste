@@ -64,6 +64,7 @@ class FormCadastro extends Component {
                             secureTextEntry
                         />
                         <Text style={styles.textErro} >{this.props.errorRegister}</Text>
+                        <Text style = {{fontSize: 15, justifyContent: 'center'}} >A senha deve conter no mínimo 10 digitos; sendo ao menos 1 caractere especial, 1 número e 1 letra maiuscula</Text>
                     </View>
                     <View style = {styles.viewButton}>
                         {this.renderBtnRegister()}
@@ -76,11 +77,11 @@ class FormCadastro extends Component {
 
 const mapStateToProps = state => (
     {
-        name: state.AppReducers.name,
-        email: state.AppReducers.email,
-        password: state.AppReducers.password,
-        errorRegister: state.AppReducers.errorRegister,
-        loading: state.AppReducers.loading
+        name: state.AutenticationReducers.name,
+        email: state.AutenticationReducers.email,
+        password: state.AutenticationReducers.password,
+        errorRegister: state.AutenticationReducers.errorRegister,
+        loading: state.AutenticationReducers.loading
     }
 );
 

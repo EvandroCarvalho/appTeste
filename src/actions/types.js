@@ -6,3 +6,5 @@ export const REGISTER_ERROR = 'register_error';
 export const REGISTER_SUCESS = 'register_sucess';
 export const LOGIN_SUCESS = 'login_sucess';
 export const LOGIN_ERROR = 'login_error';
+export const RECEIVE_DATA_STORAGE = 'receive_data_storage'
+export const ADD_LIST_LINK = 'add_list_link'
